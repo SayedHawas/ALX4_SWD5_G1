@@ -7,14 +7,17 @@ Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "LabDay1", "LabDay1\LabDay1.
 EndProject
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "LabDay2", "LabDay2\LabDay2.ssmssqlproj", "{B6C4E49F-48D2-41D8-AE04-B70293D5D633}"
 EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "LabDay3", "LabDay3\LabDay3.ssmssqlproj", "{D17EEDE9-1B58-4B17-8A4E-7C5627505663}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4919402D-9CA8-4472-87A3-DCC8D413252F}.Default|Default.ActiveCfg = Default
-		{4DAEE453-B1B3-4BD9-BF77-4C4A19AA31CF}.Default|Default.ActiveCfg = Default
 		{B6C4E49F-48D2-41D8-AE04-B70293D5D633}.Default|Default.ActiveCfg = Default
+		{D17EEDE9-1B58-4B17-8A4E-7C5627505663}.Default|Default.ActiveCfg = Default
+		{4D87C4C4-54F8-4476-A8D2-DB622E42559A}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
