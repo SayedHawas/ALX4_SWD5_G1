@@ -11,6 +11,10 @@ Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "LabDay3", "LabDay3\LabDay3.
 EndProject
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "LabDay4", "LabDay4\LabDay4.ssmssqlproj", "{25A74BD2-59C5-48AC-A644-1A0FCDD54419}"
 EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "LabDay5", "LabDay5\LabDay5.ssmssqlproj", "{58B372AA-F1A3-44C7-B900-6AA001E16A4E}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "LabDay6", "LabDay6\LabDay6.ssmssqlproj", "{974DF6B1-E18D-44E9-AEF0-1665A25F54E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
@@ -19,8 +23,10 @@ Global
 		{4919402D-9CA8-4472-87A3-DCC8D413252F}.Default|Default.ActiveCfg = Default
 		{B6C4E49F-48D2-41D8-AE04-B70293D5D633}.Default|Default.ActiveCfg = Default
 		{D17EEDE9-1B58-4B17-8A4E-7C5627505663}.Default|Default.ActiveCfg = Default
-		{09B87312-6AAE-40A3-BBFE-4C00D09383BE}.Default|Default.ActiveCfg = Default
 		{25A74BD2-59C5-48AC-A644-1A0FCDD54419}.Default|Default.ActiveCfg = Default
+		{58B372AA-F1A3-44C7-B900-6AA001E16A4E}.Default|Default.ActiveCfg = Default
+		{E28C730A-C7FE-4663-8119-39E1B142676D}.Default|Default.ActiveCfg = Default
+		{974DF6B1-E18D-44E9-AEF0-1665A25F54E0}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
