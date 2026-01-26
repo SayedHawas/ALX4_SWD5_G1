@@ -2,6 +2,7 @@
 {
     // Access Modifier { Class --> Internal  ,public } Access Right
     // Class
+    // 2-Inheritance
     public class Employee
     {
         //Fields = Const  Access By Class
@@ -10,6 +11,27 @@
         //_id Field
         private double _salary;
 
+        // Constructor  Entry Point For Class  CTOR
+        // 1) Public
+        // 2) Class Name
+        // 3) Not Void | Return Type
+        // 4) Default Parameterless (Without Params)  
+        public Employee()
+        {
+            Console.WriteLine("Create the Instance from Employee Class {Object} ...");
+        }
+        // Constructor  Polymorphism in Same Class OverLoad
+        public Employee(int id, string name, string jobTitle, double salary, string status)
+        {
+            //This Pointer Member Class
+            //Id = Id;
+            //Name = Name;
+            this.Id = id;
+            this.Name = name;
+            this.JobTitle = jobTitle;
+            this.Salary = salary;
+            this.Status = status;
+        }
 
         //Property Auto Encapsulation
         //Just Pass Data 
@@ -47,7 +69,7 @@
         //Calc NetSalary 
 
         //3-Polymorphism in Same Class OverLoad
-        //Create More than One Method {Name} With Diff Signature
+        // Create More than One Method {Name} With Diff Signature
         // Signature Head Of Method  {Head & body}
         public double NetSalary()
         {
