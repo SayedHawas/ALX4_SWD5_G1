@@ -54,9 +54,9 @@
                 ***************             InheritanceFrom     InheritanceTo                  Object
                 Normal Class                     Done                 Done                      Done    
                 Sealed Class                     Done                  X                        Done                          
-                static Class Not Using this       X                    X                         X
+                Static Class Not Using this       X                    X                         X
                 Partial Class                    Done                 Done                      Done                                          
-                Abstract Class                   Done                 Done (Must Implemented)    X               
+                Abstract Class 0-100             Done                 Done (Must Implemented)    X               
                 [Inner]Internal Class            Done                 Done                     Done (With Full Path OuterClass.InnerClass)
             }  
              */
