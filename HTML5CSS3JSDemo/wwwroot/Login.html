@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h1> Login </h1>
+
+      <form method="post"  action="" >
+        <fieldset>
+            <legend> Login Data</legend>
+            <table>
+                <tr>
+                    <td><label for="txtUserName"> User Name </label></td>
+                    <td><input type="text" id="txtUserName" name="username" placeholder="Enter Your User Name" required ></td>
+                </tr>
+                <tr>
+                    <td><label for="txtPassword"> Password</label></td>
+                     <td> <input type="password" id="txtPassword" name="password"  ></td>
+                </tr>
+                <tr>
+                    <td> <input type="submit" value="Login"></td>
+                     <td><input type="reset"  value="Clean"></td>
+                </tr>
+            </table>
+        </fieldset>
+      </form>
+
+
+       <h1> Regisrtaion  </h1>
+
+      <form method="get"  action="" >
+        <fieldset>
+            <legend> Reg Data</legend>
+            <table>
+                 <tr>
+                    <td><label for="txtAppName">App Name </label></td>
+                    <td><input type="text" id="txtAppName" name="appname" value="Smart App"  disabled ></td>
+                </tr>
+                 <tr>
+                    <td><label for="txtRegCode"> Reg Code  </label></td>
+                    <td><input type="text" id="txtRegCode" name="regcode" value="Re-1025"  readonly ></td>
+                </tr>
+                <tr>
+                    <td><label for="txtUserName"> User Name </label></td>
+                    <td><input type="text" id="txtUserName" name="username" placeholder="Enter Your User Name" required ></td>
+                </tr>
+                <tr>
+                    <td><label for="txtPassword"> Password</label></td>
+                     <td> <input type="password" id="txtPassword" name="password"  ></td>
+                </tr>
+                <tr>
+                    <td><label for="txtMobile"> Mobile </label></td>
+                     <td> <input type="tel" id="txtMobile" name="mobile" required pattern="^01[0-2,5]{1}[0-9]{8}$"  title="Pls Enter Mobile Number 01#########"></td>
+                </tr>
+                <tr>
+                    <td><label for="txtEmail"> Email </label></td>
+                     <td> <input type="email" id="txtMobile" name="mobile" required ></td>
+                </tr>
+
+
+                <tr>
+                    <td> <input type="submit" value="Login"></td>
+                     <td><input type="reset"  value="Clean"></td>
+                </tr>
+            </table>
+        </fieldset>
+      </form>
+
+
+</body>
+</html>

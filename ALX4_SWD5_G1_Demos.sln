@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day12EFCoreDemo", "Day12EFC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTMLDay1Demos", "HTMLDay1Demos\HTMLDay1Demos.csproj", "{6713F666-15C4-44BF-8FD3-667213C428B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML5CSS3JSDemo", "HTML5CSS3JSDemo\HTML5CSS3JSDemo.csproj", "{C62A610F-5827-4964-8E50-3A6E3050B09B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +203,10 @@ Global
 		{6713F666-15C4-44BF-8FD3-667213C428B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6713F666-15C4-44BF-8FD3-667213C428B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6713F666-15C4-44BF-8FD3-667213C428B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C62A610F-5827-4964-8E50-3A6E3050B09B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C62A610F-5827-4964-8E50-3A6E3050B09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C62A610F-5827-4964-8E50-3A6E3050B09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C62A610F-5827-4964-8E50-3A6E3050B09B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
