@@ -4,69 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="Style.css" rel="stylesheet">
     <style>
-        header{
-            background-color: rgb(225, 113, 113);
-            border: 2px solid black;
-            border-radius: 10px;
-            text-align: center;
-            color: white;
-            margin-bottom: 5px;
-        }
-        nav{
-             background-color: rgb(35, 109, 212);
-             border: 2px solid black;
-            border-radius: 10px;
-        }
-        ul{
-            list-style-type: none;
-            display: inline-block;
-        }
-        ul li {
-            display: inline-block;
-        }
-        ul li a{
-            text-decoration: none;
-            margin-right: 30px;
-            color:white
-        }
-        main{
-            height: 650px;
-            background-color:rgb(175, 173, 173);
-        }
+       h1{
+        font-family: "Sofia", sans-serif;
+       }
 
-article{
-    display: inline-block;
-    height: 600px;
-    background-color: rgb(166, 96, 231);
-    width: 70%;
-}
-aside{
-    float:right;
-    display: inline-block;
-    height: 600px;
-    background-color: rgb(49, 184, 234);
-    width: 29%;
-}
+       #mylink{
+        top:20px;
+        position:relative ;
+        border: 2px solid rgb(83, 2, 2);
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: rgb(3, 139, 139);
+        padding: 10px;
 
-        footer{
-            padding: 20px;
-            background-color: rgb(225, 113, 113);
-            border: 2px solid black;
-            border-radius: 10px;
-            text-align: center;
-            color: white;
-            margin-bottom: 5px;
+       }
+
+       #mylink:hover{
+         border: 2px solid rgb(163, 214, 7);
+        background-color: rgb(236, 8, 8);
+       }
+
+       #mylink:active{
+        background-color: rgb(143, 16, 155);
+       }
+    #para::first-line{
+        color:red
+    }
+     #para::first-letter{
+        color:rgb(5, 115, 189);
+        font-size: 50px;
+    }
+    table, th, td {
+        border: 2px solid red;
+        border-collapse: collapse;
+       }
+       th, td {
+         padding: 10px;
         }
     </style>
 </head>
 <body>
      <header>
-        <h1> Welcome in My Lauout</h1>
+        <h1> Welcome in My Layout</h1>
      </header>
      <nav>
         <ul>
-            <li><a href="#"> Home </a></li>
+            <li><a href="#"> <a> <i class="material-icons">cloud</i> Home </a></li>
             <li><a href="#"> Services </a></li>
             <li><a href="#"> About  </a></li>
         </ul>
@@ -75,16 +62,36 @@ aside{
      <main>
        <section>
         <article>
-             <p>
-                Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document.
+             <p id="para">
+                Video provides a <i>powerful</i> way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document.
+                <button><i class="material-icons"style="font-size:48px;color:red">save</i> </button>
+                <br>
+                <i class="material-icons">cloud</i>
+                
                 To make your <mark>document look professionally</mark> document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other. For example, you can add a matching cover page, header, and sidebar. Click Insert and then choose the elements you want from the different galleries.
             <time datetime="23-2-2026 10:51"> Today</time> 
             </p>
              <img >
 
+                <table border="1">
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                    </tr>
+                    <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                    </tr>
+                    <tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                    </tr>
+                    </table>
+
+
         </article>
         <aside>
-              <a href="#"> Linkedin</a>
+              <a href="#" id="mylink"> Linkedin</a>
         </aside>
        </section>
         <details>

@@ -35,6 +35,10 @@
         <fieldset>
             <legend> Reg Data</legend>
             <table>
+                <tr>
+                    <td> ID</td>
+                    <td> <input type="hidden" name="id" value="101"> </td>
+                </tr>
                  <tr>
                     <td><label for="txtAppName">App Name </label></td>
                     <td><input type="text" id="txtAppName" name="appname" value="Smart App"  disabled ></td>
@@ -57,17 +61,99 @@
                 </tr>
                 <tr>
                     <td><label for="txtEmail"> Email </label></td>
-                     <td> <input type="email" id="txtMobile" name="mobile" required ></td>
+                     <td> <input type="email" id="txtMobile" name="email" required ></td>
+                </tr>
+
+                 <tr>
+                    <td><label>LinkedIN :</label></td>
+                    <td><input type="url" id="url1" placeholder="http://www.domain.com" title="plz enter correct url" /></td>
                 </tr>
 
 
                 <tr>
-                    <td> <input type="submit" value="Login"></td>
+                    <td><label>Date of Birth :</label></td>
+                    <td><input type="date" id="date1" /></td>
+                    <td><input type="week" id="date2" /></td>
+                    <td><input type="month" id="date3" /></td>
+                    <td><input type="datetime" id="date4" /></td>
+                    <td><input type="datetime-local" id="date5" /></td>
+                </tr>
+                <tr>
+                    <td><label>Salary :</label></td>
+                    <td><input type="number" id="num1" name="salary" min="10000" max="50000" value="15000" step="500" /></td>
+                </tr>
+                <tr>
+                    <td><label>Volume :</label></td>
+                    <td><input type="range" id="ren1" name="volume" min="100" max="1000" value="200" step="10" /></td>
+                </tr>
+                <tr>
+                    <td><label>color :</label></td>
+                    <td><input type="color" id="color1" name="color" /></td>
+                </tr>
+
+              
+                  <tr>
+                    <td><label>Gender :</label></td>
+                    <td><input type="radio" id="radio2" value="male" name="gender" checked="checked" /> Male</td>
+                    <td><input type="radio" id="Radio1" value="female" name="gender" />Female</td>
+                </tr>
+                <tr>
+                    <td><label>Q You have a car ? :</label></td>
+                    <td><input type="checkbox" id="ch1" value="FAIT"  name="qns" /> FAIT</td>
+                    <td><input type="checkbox" id="ch2" value="BMW" name="qns" checked="checked" />BMW</td>
+                </tr>
+                <tr>
+                    <td><label>Search :</label></td>
+                    <td><input type="search" id="cearch1" autocomplete /> </td>
+                </tr>
+
+                <tr>
+                    <td><label>progress bar :</label></td>
+                    <td><progress id="progress1" max="100" value="50" /> </td>
+                </tr>
+
+                <tr>
+                    <td><label>My Laptop:</label></td>
+                    <td>
+                        <select id="List1" name="laptop">
+                         <option value="HP">HP</option>
+                         <option value="Dell" selected="selected">Dell</option>
+                         <option value="sony">Sony</option> 
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Description:</label></td>
+                    <td>
+                    <textarea id="textarea1" name="des" cols="20" rows="10"> </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>My laptop:</label></td>
+                    <td>
+                     <input list="laptops" />
+                        <datalist id="laptops">
+                            <option value ="HP" />
+                            <option value ="DEll" />
+                            <option value ="Sony" />
+                        </datalist>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label> Upload File :</label></td>
+                    <td><input type="file" id="file" multiple="multiple" name="filename" /> </td>
+                </tr>
+
+                  <tr>
+                    <td> <input type="submit" value="Save"></td>
                      <td><input type="reset"  value="Clean"></td>
                 </tr>
             </table>
         </fieldset>
       </form>
+
+      <button onclick="window.alert('Hello from Button')"> SayHello </button>
 
 
 </body>
