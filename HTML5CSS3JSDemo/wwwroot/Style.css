@@ -1,3 +1,67 @@
+*{
+      padding: 3px;
+      margin:0;
+}
+body{
+
+      background-color: rgb(178, 173, 173);
+      font-family:Georgia, 'Times New Roman', Times, serif
+}
 p{
       color:rgb(3, 35, 108);
  }
+ header{
+            background-color: rgb(225, 113, 113);
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            margin-bottom: 5px;
+        }
+        nav{
+             background-color: rgb(35, 109, 212);
+             border: 2px solid black;
+            border-radius: 10px;
+        }
+        ul{
+            list-style-type: none;
+            display: inline-block;
+        }
+        ul li {
+            display: inline-block;
+        }
+        ul li a{
+            text-decoration: none;
+            margin-right: 30px;
+            color:white
+        }
+        main{
+            height: 650px;
+            background-color:rgb(175, 173, 173);
+        }
+
+article{
+      background-image: url('Images/paper1.gif');
+  
+    display: inline-block;
+    height: 600px;
+    background-color: rgb(166, 96, 231);
+    width: 69%;
+}
+aside{
+    float:right;
+    display: inline-block;
+    height: 600px;
+    background-color: rgb(49, 184, 234);
+    width:25%;
+}
+
+        footer{
+            padding: 20px;
+            background-color: rgb(225, 113, 113);
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            margin-bottom: 5px;
+        }

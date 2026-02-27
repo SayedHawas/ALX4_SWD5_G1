@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTMLDay1Demos", "HTMLDay1De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML5CSS3JSDemo", "HTML5CSS3JSDemo\HTML5CSS3JSDemo.csproj", "{C62A610F-5827-4964-8E50-3A6E3050B09B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day22SerilizationDemo", "Day22SerilizationDemo\Day22SerilizationDemo.csproj", "{1A396C8A-B73D-439E-82A7-FB39C2A7D872}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -207,6 +209,10 @@ Global
 		{C62A610F-5827-4964-8E50-3A6E3050B09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C62A610F-5827-4964-8E50-3A6E3050B09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C62A610F-5827-4964-8E50-3A6E3050B09B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A396C8A-B73D-439E-82A7-FB39C2A7D872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A396C8A-B73D-439E-82A7-FB39C2A7D872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A396C8A-B73D-439E-82A7-FB39C2A7D872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A396C8A-B73D-439E-82A7-FB39C2A7D872}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
