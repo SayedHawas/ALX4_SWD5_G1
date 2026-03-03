@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="MyScript2.js"></script>
+    <script>
+       //window.alert("Welcome in Js From Head ....");
+    </script>
+    <style>
+        #para{
+            height: 150px;
+            border: 2px solid blue;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+      <noscript>Your Browser close Js </noscript>
+      <h1> Welcome in JavaScript</h1>
+
+      <button onclick="window.alert('Welcome in Js From Event Button ....');"> Click Me</button>
+      <br />
+      <br />
+      <button onclick="document.write('Welcome From Document ....')">Show text </button>
+      <br />
+      <br/>
+
+      <p id="para">
+
+      </p>
+      <button onclick="document.getElementById('para').innerHTML+='<h1 style=color:blue;> Welcome DOM </h1>'"> Show Text 2</button>
+
+       <div id="mydiv">
+         
+       </div>
+
+       <button onclick="AddTag('h1','Welcome In Function','mydiv')"> Show Element By Funcation </button>
+
+
+         <br>
+         <input type="number" id="myNumber"> 
+         <label id="result"> </label> <br>
+         <button  onclick="ShowResult('result',factorial(GetValue('myNumber')))"> Get Value </button>
+
+<script>
+        // window.alert("Welcome in Js From Body ....");
+        //
+        /*
+        
+        */
+       //5-Input & output Variables in Javascript 
+       //Browser window  , Console   | Document document Page   , DOM
+       //input    variable  Output
+    //    y=10; 
+    //    var x=5;
+    //    var z;
+    //    var name = "ahmed";
+    //    var myname =  window.prompt("Enter Your Name ? ", "");
+      
+    //     //window.alert("Welcome " + myname);
+    //   console.log("Welcome " + myname);
+    //   //string , number
+    //   console.log("Type Of y " + typeof(y) + " Value : " + y);
+    //   console.log("Type Of name " + typeof(name) + " Value : " + name);
+    //   console.log("Type Of z " + typeof(z) + " Value : " + z);
+        
+    //   document.write("<br />"); 
+    //   document.write("Welcome in JavaScript"); 
+    //   document.write("<h1>Welcome in JavaScript<h1>");  
+
+    //   const AppName = "Smart App";
+    //   //AppName = "Smart software";
+
+    //   var z = "Welcome";
+    //   console.log("Type Of z " + typeof(z) + " Value : " + z);
+    //   z=100;
+    //   console.log("Type Of z " + typeof(z) + " Value : " + z);
+
+
+    //   let MyVar = 100;
+    //   console.log("Let Type Of MyVar " + typeof(MyVar) + " Value : " + MyVar);
+    //   //let MyVar = "Ahmed";
+    //   MyVar = "Ali";
+    //   console.log("Let Type Of MyVar " + typeof(MyVar) + " Value : " + MyVar);
+
+
+    //   document.write("Welcome From Document ....")
+    //   //DOM    Document Like Page 
+    //   //DOM Document Object Model   <P>  </P>   
+    //   document.getElementById("para").innerHTML="<h1 style='color:red;'> Welcome DOM </h1>"
+      
+
+    //6-Data type in Javascript
+    // -String    in string  "   --> \"   '  -->\'
+    // -Numbers     Integer , FloatingPoint    ---> Nan (Not a Number)
+    // -Boolean 
+    // -Null value
+    // -Undefined  
+    // -Object  --> Object   var person{Id:1,Name:"Sayed",Salary:3000}
+
+    //debugger
+    var x = "123a";  //-->NaN
+    console.log("Let Type Of x " + typeof(x) + " Value : " + x);
+    var object = null;
+    console.log("Let Type Of object " + typeof(object) + " Value : " + object);
+    var unDefined ;
+    console.log("Let Type Of unDefined " + typeof(unDefined) + " Value : " + unDefined);
+
+      
+    // 7-Convert Function in JavaScript        
+    //eval();              String ----> Number   
+    // var x = "123e";
+    // var y = 12;
+    // var z = eval(x) + y;
+
+    // console.log("Z Value :  " + z);      // ---> undefined
+
+    // // ParseInt();          string ----> Number  
+    // // ParseFloat();
+    // var x = "12s3";
+    // var y = 12;
+    // var z = parseInt(x) + y;
+
+    // console.log("Z Value :  " + z);   // ---> undefined
+
+
+        //     8-Array in JavaScript :-
+        // ------------------------
+        // Demo:-
+        // ------
+        // 1-
+        var colorArr= new Array();
+        colorArr[0]="red";
+        colorArr[1]="yellow";
+        colorArr[2]="Blue";
+        // 2-   
+        var colorArr= new Array(3);
+        colorArr[0]="red";
+        colorArr[1]="yellow";
+        colorArr[2]="Blue";
+
+        var colorArr = ["red","yellow","Blue"] ;
+
+        for(var x = 0; x<colorArr.length ; x++)
+        {
+            console.log(colorArr[x]);
+            document.getElementById('mydiv').innerHTML += "<h1 style='color:"+colorArr[x]+";'>" + colorArr[x] + "</h1>"
+        }
+
+
+        var arr = new Array(4);
+        arr[0] = "sayed";
+        arr[1] = 50;
+        arr[2] = new Array("sayed", "Maryim", "retaj");  //[2][0]
+        arr[3] = false;
+        arr[6] = "Welcome ";
+
+        delete arr[3];
+
+  
+      console.log(arr[1]);
+      console.log("<br/>")
+      console.log(arr[4]);
+      console.log("<br/>")
+      console.log(arr[6]);
+      console.log("<br/>")
+      console.log(arr[5]);
+      console.log("<br/>")
+      console.log(arr[2]);
+      console.log("<br/>")
+      console.log(arr[2][1]);
+      console.log("<br/>")
+      console.log(arr);
+      console.log("<br/>")
+      console.log("delete : "  + arr[3]);
+      console.log("<br/>")
+
+      console.log(typeof (arr[2][0]));
+      console.log("<br/>")
+      console.log(typeof (arr[1]) =="number"); // "Number".toLowerCase());
+
+
+        var y = 10;
+        var x = 20;
+        document.write("the value for x " + x+ "<br/>");
+        document.write("the value for y " + y + "<br/>");
+        var z = x + y;
+        document.write("+  ==> "+ z + "<br/>");
+        var z = x - y;
+        document.write("-  ==> " + z + "<br/>");
+        var z = x / y;
+        document.write("/  ==> " + z + "<br/>");
+        var z = x * y;
+        document.write("*  ==> " + z + "<br/>");
+        //++ Postfix
+        document.write(x++  + "<br/>");
+        document.write("++   ==> " + x + "<br/>");
+        //++ Prefix
+        document.write(++x + "<br/>");
+
+                //2-Logical Operators:-
+        // &&   ||   !(Not)
+        var b = true;
+        //Not
+        document.write("Not ! <br />")
+        document.write(!b + " <br />")
+        //and 
+        document.write("And && <br />" )
+        b = x > 1 && y > 1;
+        document.write(b + "<br />")
+        b = x < 1 && y > 1;
+        document.write(b + "<br />")
+        //OR
+        document.write("OR || <br />")
+        b = x < 1 || y > 1;
+        document.write(b + "<br />")
+
+
+        var y = 10;
+        var x = 20;
+        var z = true;
+        document.write("Comparison Operators" + "<br/>");
+        document.write("-------------------- " + "<br/>");
+         z = x > y;
+        document.write("> " + z + "<br/>");
+         z = x < y;
+        document.write("< " + z + "<br/>");
+         z = x >= y;
+        document.write(">= " + z + "<br/>");
+         z = x <= y;
+         document.write("<= " + z + "<br/>");
+         y = 20;
+         z = x == y;
+         document.write("== " + z + "<br/>");
+         z = x === y;
+         document.write("=== " + z + "<br/>");
+
+         y = "20";
+         z = x == y;  //20 == "20"
+         document.write("== " + z + "<br/>");
+         z = x === y;  //20 ==="20"
+         document.write("=== " + z + "<br/>");
+
+
+
+
+         var v1 = 15;
+         var v2 = 6;
+         var max = (v1 > v2) ? v1 : v2;
+         document.write("Max is : " + max);
+
+        var date = new Date();
+        document.write(typeof(date) + "<br />");
+        var h = parseInt(date.getHours());
+        if (h < 12)
+        {
+            document.write(h + "Good morning");
+        }
+         else
+        {
+            document.write((h-12) + "Good evening ");
+        }
+            document.write( "<br />");
+        document.write(h);
+
+
+        var day = prompt("Enter numebr of day","");
+        day = parseInt(day);
+        switch(day)
+        {
+        case 1:
+        case 2:
+        case 3:
+        alert("businss Day ");
+            break;
+        case 4:
+        case 5:
+        alert("hafe week");
+        break;
+        case 6 :
+        case 7 :
+            alert("holiday");
+            break;
+        default:
+            alert ("Invalid Day");
+            break;
+        }
+
+
+//LOOP
+document.write( "<br />");
+for(var i =0; i<10;i++)
+{
+   document.write(" number  : " + i + "<br/>");
+}
+document.write( "<br />");
+
+
+        var arr = [77,55,66,12,44];
+        arr.sort(); // ---Method 
+        arr.length; // ---Properity
+        arr.reverse();
+        document.write(arr.toString());  // string , string , string ,
+
+        document.write( "<br />");
+        for(var i in arr)
+        {
+            document.write("index : " +  i );  //index
+            document.write("value  " + arr[i] + "<br />"); // Value 
+        }
+
+        //  While:-
+        // -------
+        // Demo:-
+        // ------
+         document.write( "<br />");
+var x =0;
+while(x<10)
+{
+   document.write(" number  : " + x++ + "<br/>");
+   //x++
+}
+// .................................................
+// DoWhile:-
+// --------- 
+// Do    Run one At less if condtion is Breaken 
+
+// Demo:-
+// ------
+var y=0;
+do{
+   document.write(" number  : " + y + "<br/>");
+   y++
+}while(y<10);
+
+
+                //   0  1  2  3  4  5  6 
+ var arr = new Array(1, 2, 3, 4, 5, 6, 7);
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (i % 2 == 0)
+                sum += arr[i];
+        }
+        document.write("the total is " + sum);
+
+
+
+    // 11-Function in javascript  
+    // ============================
+        //
+        function print(name) {
+           console.log("Hello  "+ name +" in JavaScript ");
+        }
+
+        print('Ahmed');
+
+        function Sum(x , y)
+        {
+            return x+ y ;
+        }
+        console.log(Sum(10,15));
+
+
+        function AddTag(tag,text ,traget)
+        {
+          document.getElementById(traget).innerHTML += "<"+tag+">" + text +"</"+tag+">";
+          document.getElementById(AddTag.arguments[2]).innerHTML += "<"+tag+">" + text +"</"+tag+">"
+        }
+
+</script>
+
+</body>
+</html>
