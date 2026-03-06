@@ -7,6 +7,10 @@
     <script src="MyScript2.js"></script>
     <script>
        //window.alert("Welcome in Js From Head ....");
+       var EmployeeSalary =function(salary ,bouns)
+       {
+              return salary + bouns;
+       }
     </script>
     <style>
         #para{
@@ -43,6 +47,18 @@
          <input type="number" id="myNumber"> 
          <label id="result"> </label> <br>
          <button  onclick="ShowResult('result',factorial(GetValue('myNumber')))"> Get Value </button>
+
+
+
+         <br />
+         <button onclick="window.alert(EmployeeSalary(15000,5000) )"> Show Employee Salary </button>
+   <br>
+   <br>
+   <input type="text"  id="mytxt">
+   <button onclick="validationText('mytxt')"> Check  </button>
+
+
+
 
 <script>
         // window.alert("Welcome in Js From Body ....");
@@ -101,12 +117,12 @@
     // -Object  --> Object   var person{Id:1,Name:"Sayed",Salary:3000}
 
     //debugger
-    var x = "123a";  //-->NaN
-    console.log("Let Type Of x " + typeof(x) + " Value : " + x);
-    var object = null;
-    console.log("Let Type Of object " + typeof(object) + " Value : " + object);
-    var unDefined ;
-    console.log("Let Type Of unDefined " + typeof(unDefined) + " Value : " + unDefined);
+    // var x = "123a";  //-->NaN
+    // console.log("Let Type Of x " + typeof(x) + " Value : " + x);
+    // var object = null;
+    // console.log("Let Type Of object " + typeof(object) + " Value : " + object);
+    // var unDefined ;
+    // console.log("Let Type Of unDefined " + typeof(unDefined) + " Value : " + unDefined);
 
       
     // 7-Convert Function in JavaScript        
@@ -131,219 +147,219 @@
         // Demo:-
         // ------
         // 1-
-        var colorArr= new Array();
-        colorArr[0]="red";
-        colorArr[1]="yellow";
-        colorArr[2]="Blue";
-        // 2-   
-        var colorArr= new Array(3);
-        colorArr[0]="red";
-        colorArr[1]="yellow";
-        colorArr[2]="Blue";
+//         var colorArr= new Array();
+//         colorArr[0]="red";
+//         colorArr[1]="yellow";
+//         colorArr[2]="Blue";
+//         // 2-   
+//         var colorArr= new Array(3);
+//         colorArr[0]="red";
+//         colorArr[1]="yellow";
+//         colorArr[2]="Blue";
 
-        var colorArr = ["red","yellow","Blue"] ;
+//         var colorArr = ["red","yellow","Blue"] ;
 
-        for(var x = 0; x<colorArr.length ; x++)
-        {
-            console.log(colorArr[x]);
-            document.getElementById('mydiv').innerHTML += "<h1 style='color:"+colorArr[x]+";'>" + colorArr[x] + "</h1>"
-        }
+//         for(var x = 0; x<colorArr.length ; x++)
+//         {
+//             console.log(colorArr[x]);
+//             document.getElementById('mydiv').innerHTML += "<h1 style='color:"+colorArr[x]+";'>" + colorArr[x] + "</h1>"
+//         }
 
 
-        var arr = new Array(4);
-        arr[0] = "sayed";
-        arr[1] = 50;
-        arr[2] = new Array("sayed", "Maryim", "retaj");  //[2][0]
-        arr[3] = false;
-        arr[6] = "Welcome ";
+//         var arr = new Array(4);
+//         arr[0] = "sayed";
+//         arr[1] = 50;
+//         arr[2] = new Array("sayed", "Maryim", "retaj");  //[2][0]
+//         arr[3] = false;
+//         arr[6] = "Welcome ";
 
-        delete arr[3];
+//         delete arr[3];
 
   
-      console.log(arr[1]);
-      console.log("<br/>")
-      console.log(arr[4]);
-      console.log("<br/>")
-      console.log(arr[6]);
-      console.log("<br/>")
-      console.log(arr[5]);
-      console.log("<br/>")
-      console.log(arr[2]);
-      console.log("<br/>")
-      console.log(arr[2][1]);
-      console.log("<br/>")
-      console.log(arr);
-      console.log("<br/>")
-      console.log("delete : "  + arr[3]);
-      console.log("<br/>")
+//       console.log(arr[1]);
+//       console.log("<br/>")
+//       console.log(arr[4]);
+//       console.log("<br/>")
+//       console.log(arr[6]);
+//       console.log("<br/>")
+//       console.log(arr[5]);
+//       console.log("<br/>")
+//       console.log(arr[2]);
+//       console.log("<br/>")
+//       console.log(arr[2][1]);
+//       console.log("<br/>")
+//       console.log(arr);
+//       console.log("<br/>")
+//       console.log("delete : "  + arr[3]);
+//       console.log("<br/>")
 
-      console.log(typeof (arr[2][0]));
-      console.log("<br/>")
-      console.log(typeof (arr[1]) =="number"); // "Number".toLowerCase());
-
-
-        var y = 10;
-        var x = 20;
-        document.write("the value for x " + x+ "<br/>");
-        document.write("the value for y " + y + "<br/>");
-        var z = x + y;
-        document.write("+  ==> "+ z + "<br/>");
-        var z = x - y;
-        document.write("-  ==> " + z + "<br/>");
-        var z = x / y;
-        document.write("/  ==> " + z + "<br/>");
-        var z = x * y;
-        document.write("*  ==> " + z + "<br/>");
-        //++ Postfix
-        document.write(x++  + "<br/>");
-        document.write("++   ==> " + x + "<br/>");
-        //++ Prefix
-        document.write(++x + "<br/>");
-
-                //2-Logical Operators:-
-        // &&   ||   !(Not)
-        var b = true;
-        //Not
-        document.write("Not ! <br />")
-        document.write(!b + " <br />")
-        //and 
-        document.write("And && <br />" )
-        b = x > 1 && y > 1;
-        document.write(b + "<br />")
-        b = x < 1 && y > 1;
-        document.write(b + "<br />")
-        //OR
-        document.write("OR || <br />")
-        b = x < 1 || y > 1;
-        document.write(b + "<br />")
+//       console.log(typeof (arr[2][0]));
+//       console.log("<br/>")
+//       console.log(typeof (arr[1]) =="number"); // "Number".toLowerCase());
 
 
-        var y = 10;
-        var x = 20;
-        var z = true;
-        document.write("Comparison Operators" + "<br/>");
-        document.write("-------------------- " + "<br/>");
-         z = x > y;
-        document.write("> " + z + "<br/>");
-         z = x < y;
-        document.write("< " + z + "<br/>");
-         z = x >= y;
-        document.write(">= " + z + "<br/>");
-         z = x <= y;
-         document.write("<= " + z + "<br/>");
-         y = 20;
-         z = x == y;
-         document.write("== " + z + "<br/>");
-         z = x === y;
-         document.write("=== " + z + "<br/>");
+//         var y = 10;
+//         var x = 20;
+//         document.write("the value for x " + x+ "<br/>");
+//         document.write("the value for y " + y + "<br/>");
+//         var z = x + y;
+//         document.write("+  ==> "+ z + "<br/>");
+//         var z = x - y;
+//         document.write("-  ==> " + z + "<br/>");
+//         var z = x / y;
+//         document.write("/  ==> " + z + "<br/>");
+//         var z = x * y;
+//         document.write("*  ==> " + z + "<br/>");
+//         //++ Postfix
+//         document.write(x++  + "<br/>");
+//         document.write("++   ==> " + x + "<br/>");
+//         //++ Prefix
+//         document.write(++x + "<br/>");
 
-         y = "20";
-         z = x == y;  //20 == "20"
-         document.write("== " + z + "<br/>");
-         z = x === y;  //20 ==="20"
-         document.write("=== " + z + "<br/>");
-
-
-
-
-         var v1 = 15;
-         var v2 = 6;
-         var max = (v1 > v2) ? v1 : v2;
-         document.write("Max is : " + max);
-
-        var date = new Date();
-        document.write(typeof(date) + "<br />");
-        var h = parseInt(date.getHours());
-        if (h < 12)
-        {
-            document.write(h + "Good morning");
-        }
-         else
-        {
-            document.write((h-12) + "Good evening ");
-        }
-            document.write( "<br />");
-        document.write(h);
+//                 //2-Logical Operators:-
+//         // &&   ||   !(Not)
+//         var b = true;
+//         //Not
+//         document.write("Not ! <br />")
+//         document.write(!b + " <br />")
+//         //and 
+//         document.write("And && <br />" )
+//         b = x > 1 && y > 1;
+//         document.write(b + "<br />")
+//         b = x < 1 && y > 1;
+//         document.write(b + "<br />")
+//         //OR
+//         document.write("OR || <br />")
+//         b = x < 1 || y > 1;
+//         document.write(b + "<br />")
 
 
-        var day = prompt("Enter numebr of day","");
-        day = parseInt(day);
-        switch(day)
-        {
-        case 1:
-        case 2:
-        case 3:
-        alert("businss Day ");
-            break;
-        case 4:
-        case 5:
-        alert("hafe week");
-        break;
-        case 6 :
-        case 7 :
-            alert("holiday");
-            break;
-        default:
-            alert ("Invalid Day");
-            break;
-        }
+//         var y = 10;
+//         var x = 20;
+//         var z = true;
+//         document.write("Comparison Operators" + "<br/>");
+//         document.write("-------------------- " + "<br/>");
+//          z = x > y;
+//         document.write("> " + z + "<br/>");
+//          z = x < y;
+//         document.write("< " + z + "<br/>");
+//          z = x >= y;
+//         document.write(">= " + z + "<br/>");
+//          z = x <= y;
+//          document.write("<= " + z + "<br/>");
+//          y = 20;
+//          z = x == y;
+//          document.write("== " + z + "<br/>");
+//          z = x === y;
+//          document.write("=== " + z + "<br/>");
+
+//          y = "20";
+//          z = x == y;  //20 == "20"
+//          document.write("== " + z + "<br/>");
+//          z = x === y;  //20 ==="20"
+//          document.write("=== " + z + "<br/>");
 
 
-//LOOP
-document.write( "<br />");
-for(var i =0; i<10;i++)
-{
-   document.write(" number  : " + i + "<br/>");
-}
-document.write( "<br />");
 
 
-        var arr = [77,55,66,12,44];
-        arr.sort(); // ---Method 
-        arr.length; // ---Properity
-        arr.reverse();
-        document.write(arr.toString());  // string , string , string ,
+//          var v1 = 15;
+//          var v2 = 6;
+//          var max = (v1 > v2) ? v1 : v2;
+//          document.write("Max is : " + max);
 
-        document.write( "<br />");
-        for(var i in arr)
-        {
-            document.write("index : " +  i );  //index
-            document.write("value  " + arr[i] + "<br />"); // Value 
-        }
-
-        //  While:-
-        // -------
-        // Demo:-
-        // ------
-         document.write( "<br />");
-var x =0;
-while(x<10)
-{
-   document.write(" number  : " + x++ + "<br/>");
-   //x++
-}
-// .................................................
-// DoWhile:-
-// --------- 
-// Do    Run one At less if condtion is Breaken 
-
-// Demo:-
-// ------
-var y=0;
-do{
-   document.write(" number  : " + y + "<br/>");
-   y++
-}while(y<10);
+//         var date = new Date();
+//         document.write(typeof(date) + "<br />");
+//         var h = parseInt(date.getHours());
+//         if (h < 12)
+//         {
+//             document.write(h + "Good morning");
+//         }
+//          else
+//         {
+//             document.write((h-12) + "Good evening ");
+//         }
+//             document.write( "<br />");
+//         document.write(h);
 
 
-                //   0  1  2  3  4  5  6 
- var arr = new Array(1, 2, 3, 4, 5, 6, 7);
-        var sum = 0;
-        for (var i = 0; i < arr.length; i++) {
-            if (i % 2 == 0)
-                sum += arr[i];
-        }
-        document.write("the total is " + sum);
+//         var day = prompt("Enter numebr of day","");
+//         day = parseInt(day);
+//         switch(day)
+//         {
+//         case 1:
+//         case 2:
+//         case 3:
+//         alert("businss Day ");
+//             break;
+//         case 4:
+//         case 5:
+//         alert("hafe week");
+//         break;
+//         case 6 :
+//         case 7 :
+//             alert("holiday");
+//             break;
+//         default:
+//             alert ("Invalid Day");
+//             break;
+//         }
+
+
+// //LOOP
+// document.write( "<br />");
+// for(var i =0; i<10;i++)
+// {
+//    document.write(" number  : " + i + "<br/>");
+// }
+// document.write( "<br />");
+
+
+//         var arr = [77,55,66,12,44];
+//         arr.sort(); // ---Method 
+//         arr.length; // ---Properity
+//         arr.reverse();
+//         document.write(arr.toString());  // string , string , string ,
+
+//         document.write( "<br />");
+//         for(var i in arr)
+//         {
+//             document.write("index : " +  i );  //index
+//             document.write("value  " + arr[i] + "<br />"); // Value 
+//         }
+
+//         //  While:-
+//         // -------
+//         // Demo:-
+//         // ------
+//          document.write( "<br />");
+// var x =0;
+// while(x<10)
+// {
+//    document.write(" number  : " + x++ + "<br/>");
+//    //x++
+// }
+// // .................................................
+// // DoWhile:-
+// // --------- 
+// // Do    Run one At less if condtion is Breaken 
+
+// // Demo:-
+// // ------
+// var y=0;
+// do{
+//    document.write(" number  : " + y + "<br/>");
+//    y++
+// }while(y<10);
+
+
+//                 //   0  1  2  3  4  5  6 
+//  var arr = new Array(1, 2, 3, 4, 5, 6, 7);
+//         var sum = 0;
+//         for (var i = 0; i < arr.length; i++) {
+//             if (i % 2 == 0)
+//                 sum += arr[i];
+//         }
+//         document.write("the total is " + sum);
 
 
 
@@ -369,6 +385,166 @@ do{
           document.getElementById(AddTag.arguments[2]).innerHTML += "<"+tag+">" + text +"</"+tag+">"
         }
 
+         //debugger;
+        function myFun(x , y)
+        {
+            try {
+                var z = x / y;
+               console.log(z);
+                if(y==0) throw"Can not Div By Zero"
+                if(isNaN(z)) throw"Invalid Format ..."
+            } catch (e) {
+                console.log(e);
+            }
+            finally {
+                console.log("End Script ....")
+            }
+        }
+    
+        myFun(100,2);
+        myFun(100,'a2');
+        myFun(100,0);
+         
+
+         function show(name) {
+            var leng = toString(name).length;
+            try{
+                if(name =="")throw"Empty parameter";
+                if(toString(name).length > 15)throw"Overflow parameter";
+                console.log("your Name is " + name);
+            }              
+            catch (exception) {
+              if (exception == "Empty parameter")
+              console.log("Can not enter Empty Name");
+              if (exception == "Overflow parameter")
+              console.log("Can not enter  Name Gt 50 letters ...");
+            }
+        }
+
+        show("Sayed Hawas");
+        show("");
+        show("dvjkndskljfblfkjdskjdsfsdfdsxzczxczxczxczxcfdslbdsjkfbdsjkbfdfdfsdfdsfdsfsdfsdfsdfdsjkdsbfjkdsbfjksdbfkjbsdjkfbdsjk");
+
+        // =========================
+        // 7-Object in JavaScript:-
+        // ========================
+        // Like Class in C# 
+        // =======================================================
+        // --> Object   var person{Id:1,Name:"Sayed",Salary:3000}
+        // =======================================================
+
+        //Object in JavasScript 
+        //----------------- Object Employee
+         var Employee = new Object();  // Object (O) upper case 
+         Employee.ID = 1;
+         Employee.Name = "Sayed";
+         Employee.Salary = 3000;
+         Employee.NetSalary = function(bouns){
+              return Employee.Salary + bouns;
+         }
+
+         //---------------- Object Client 
+         var Client = { 
+            Id : 2 ,
+            Name : "ALI",
+            City : "Alex",
+            NetPayed : function(){
+               console.log(5000 + 200);
+            }
+         }
+
+         console.log(Employee.ID + " " + Employee.Name +" "+ Employee.Salary);
+         console.log(Client.Id + " " + Client.Name +" "+ Client.City);
+
+         console.log(Employee.NetSalary(2000));
+         Client.Id=2 ;
+         Client.City = "Cairo";
+         Client.Name = "Ahmed"
+         Client.NetPayed();
+
+        console.log(Employee.Name);
+        console.log(Employee["Salary"]);
+
+            var x = "Salary";
+            Employee[x]=10000;   //Set 
+            console.log(Employee.Salary);  //get
+
+            //Add Field | Method 
+            Employee.Job = "Developer";
+
+            console.log("-----------------")
+            //  Employee 
+               for (var i in Employee) {
+                 console.log("Field : " + i + "=" + Employee[i] )
+                }
+
+             //delete Field | Method 
+             delete Client.City;
+             console.log("-----------------")
+            // Client
+               for (var i in Client) {
+                 console.log("Field : " + i + "=" + Client[i] )
+                }
+
+             var bool = "Name" in Employee;   // If field exists  ---(true)
+             console.log("Name Alread Exist into Employee " +  bool);
+
+             if("City" in Client)
+             {
+                //Code 
+                
+             }
+             else 
+             {
+                console.log("Not Found");
+             }
+
+
+
+              //Object in JavasScript 
+         var Employee = new Object();  // Object (O) upper case 
+         Employee.ID = 1;
+         Employee.Name = "Sayed";
+         Employee.Salary = 3000;
+
+         //Object in JavasScript 
+         var Manager = new Object();  // Object (O) upper case 
+         Manager.ID = 1;
+         Manager.Name = "Sayed";
+         Manager.Salary = 3000;
+
+         //1   "1"
+        var b = Employee == Manager;
+        var bo = Employee === Manager;
+        console.log(b);        //-->false
+        console.log(bo);        //-->false
+        var values = Employee.ID == Manager.ID 
+        console.log(values);        //-->true
+
+        var Employee2 = Manager;
+        var boo = Employee2 == Manager;
+        var booo = Employee2 === Manager;
+         console.log(boo);        //--True
+         console.log(booo);        //--True
+
+
+       //(year-Month-day-hours);
+        var d = new Date("2026","3","6");
+        console.log(d.getDay());  //In Week 
+        console.log(d.getMonth());
+        console.log(d.getFullYear());
+
+
+         function validationText(target) {
+            var t = document.getElementById(target);
+            if (t.value == 0 || t.value == null) {
+                alert('your must Enter Data');
+                t.focus();
+                return false;
+            } else {
+                return true;
+            }
+        }
 </script>
 
 </body>
