@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery/jquery.min.js"></script>
+    
+</head>
+<body>
+     <!-- <Tag>  Document -->
+        <p id="para"> </p>
+        <input type="button" value="Sum" id="Button1" />
+         <div id="showdiv" style="display:none ; border:1px solid red ; background-color:orange ; color:white; width:200px;height:100px;">
+             Welcome With JQuery
+         </div>
+
+      <section id="Personal">
+       <table>
+           <tr>
+              <td> Number1 :</td>
+               <td><input type="text" id="txtNumber1"  /></td>  
+           </tr>
+           <tr>
+              <td> Number2 :</td>
+               <td><input type="text" id="txtNumber2" /></td>  
+           </tr>
+           <tr>
+              <td> <input type="button" value="Sum" id="btnsum" /> </td>
+               <td><label id="total"></label></td>
+               
+           </tr>
+       </table>
+    </section>
+    
+
+    <script>
+       // document.getElementById("#para").innerHTML = "Welcome in JQuery ... ";
+
+        $(document).ready(function(){
+            $("#para").html("Welcome in JQuery ...");
+
+            $("#Button1").click(function(){
+                  $("#showdiv").fadeIn(3000).fadeOut(5000);
+            });
+
+             $("#btnsum").click(function () {
+                var n1 = $("#txtNumber1").val();
+                var n2 = $("#txtNumber2").val();
+                $("#total").text(parseInt(n1) + Number(n2))
+                //.fadeIn(4000).fadeOut(4000);
+             });
+
+        });
+    </script>
+</body>
+</html>
