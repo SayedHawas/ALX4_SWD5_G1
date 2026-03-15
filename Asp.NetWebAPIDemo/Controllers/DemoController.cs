@@ -46,13 +46,13 @@ namespace Asp.NetWebAPIDemo.Controllers
         [HttpPut]
         public string Put()
         {
-
+            return "";
         }
 
         [HttpDelete]
         public string Delete()
         {
-
+            return "";
         }
 
 
