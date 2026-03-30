@@ -1,5 +1,4 @@
-﻿using ASP.NetWebAPIDay3Demo.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace ASP.NetWebAPIDay3Demo.Data
 {
@@ -15,6 +14,7 @@ namespace ASP.NetWebAPIDay3Demo.Data
         }
 
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
@@ -34,6 +34,20 @@ namespace ASP.NetWebAPIDay3Demo.Data
                     new Category { Id = 2, Name = "Books" },
                     new Category { Id = 3, Name = "Clothing" }
             );
+
+
+            // base.OnModelCreating(modelBuilder);
+            //Add Primary Key 
+            //modelBuilder.Entity<Product>(s => {
+            //    s.HasKey(x => x.Id);
+            //    s.Property(x => x.Name).IsRequired().HasMaxLength(100);
+            //});
+
+            //modelBuilder.Entity<Product>(s =>
+            //{
+            //    s.HasKey(x => x.Id);  //Primary Key
+            //    s.Property(x => x.Id).ValueGeneratedNever(); // Not Identity 
+            //});
         }
     }
 }

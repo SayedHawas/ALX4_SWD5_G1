@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ASP.NetWebAPIDay3Demo.DTOs.CategoryDtos;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -10,29 +11,54 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
     {
         //DI
         private readonly AppDbContext _context;
-
         public CategoriesController(AppDbContext context)
         {
             _context = context;
         }
-
         //CRUD
         [HttpGet]
         public IActionResult Get()
         {
+            //var categories = _context.Categories.ToList();
+            //return Ok(categories);
+
             var categories = _context.Categories.ToList();
-            return Ok(categories);
+
+            if (categories == null || categories.Count == 0)
+            {
+                return NotFound();
+            }
+            List<CategoryGetDto> listCategories = new List<CategoryGetDto>();
+            foreach (var category in categories)
+            {
+                CategoryGetDto categoryDto = new CategoryGetDto
+                {
+                    Id = category.Id,
+                    Name = category.Name,
+                    Description = category.Description
+                };
+                listCategories.Add(categoryDto);
+            }
+            return Ok(listCategories);
         }
         [HttpGet("{id:int}")]
         public IActionResult GetById(int id) // Model Binder (Primitive Route[Parameter Or Query string ] | Complex --> request body  )
         {
             //var category = _context.Categories.Find(id);
             var category = _context.Categories.FirstOrDefault(e => e.Id == id);
+
             if (category == null)
             {
                 return NotFound();
             }
-            return Ok(category);
+            CategoryGetDto categoryOne = new CategoryGetDto()
+            {
+                Id = category.Id,
+                Name = category.Name,
+                Description = category.Description
+            };
+
+            return Ok(categoryOne);
         }
 
         [HttpGet("{name:alpha}")]
@@ -43,23 +69,34 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
             {
                 return NotFound();
             }
-            return Ok(category);
+            CategoryGetDto categoryOne = new CategoryGetDto()
+            {
+                Id = category.Id,
+                Name = category.Name,
+                Description = category.Description
+            };
+            return Ok(categoryOne);
         }
         [HttpPost]
-        public IActionResult Post(Category newCategory)
+        public IActionResult Post(CategoryPostDto newCategory)
         {
+            Category category = new Category()
+            {
+                Name = newCategory.Name,
+                Description = newCategory.Description
+            };
             if (ModelState.IsValid)
             {
-                _context.Categories.Add(newCategory);
+                _context.Categories.Add(category);
                 _context.SaveChanges();
-                //return Created();
+                return Created();
                 //Location
-                return CreatedAtAction("GetById", new { id = newCategory.Id }, newCategory);
+                // return CreatedAtAction("GetById", new { id = newCategory.Id }, newCategory);
             }
             return BadRequest(ModelState);
         }
         [HttpPut("{id}")]
-        public IActionResult Put([FromRoute] int id, [FromBody] Category newCategory)
+        public IActionResult Put([FromRoute] int id, [FromBody] CategoryPutDto newCategory)
         {
             if (id != newCategory.Id)
             {
@@ -71,7 +108,10 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
             }
             try
             {
-                _context.Entry(newCategory).State = EntityState.Modified;
+                //_context.Entry(newCategory).State = EntityState.Modified;
+                var category = _context.Categories.FirstOrDefault(e => e.Id == id);
+                category.Name = newCategory.Name;
+                category.Description = newCategory.Description;
                 _context.SaveChanges();
                 return Ok(newCategory);
             }
