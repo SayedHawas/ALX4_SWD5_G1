@@ -1,5 +1,4 @@
-﻿using ASP.NetWebAPIDay3Demo.DTOs.CategoryDtos;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -20,12 +19,12 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
         //Read All Rows
         //https://localhost:7031/api/Categories
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CategoryGetDto>>> Get()
+        public IActionResult Get()
         {
             //var categories = _context.Categories.ToList();
             //return Ok(categories);
             //return From Database
-            var categories = await _context.Categories.Include("Products").AsNoTracking().ToListAsync();
+            var categories = _context.Categories.Include("Products").AsNoTracking().ToList();
             if (categories == null || categories.Count == 0)
             {
                 return NotFound();
@@ -49,10 +48,10 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
         //Read One Row
         //https://localhost:7031/api/Categories/7
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<CategoryGetDto>> GetById(int id) // Model Binder (Primitive Route[Parameter Or Query string ] | Complex --> request body  )
+        public IActionResult GetById(int id) // Model Binder (Primitive Route[Parameter Or Query string ] | Complex --> request body  )
         {
             //var category = _context.Categories.Find(id);
-            var category = await _context.Categories.Include("Products").AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
+            var category = _context.Categories.Include("Products").AsNoTracking().FirstOrDefault(e => e.Id == id);
             if (category == null)
             {
                 return NotFound();
@@ -69,9 +68,9 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
         //Read One Row By Name 
         //https://localhost:7031/api/Categories/books
         [HttpGet("{name:alpha}")]
-        public async Task<ActionResult<CategoryGetDto>> GetByName(string name)
+        public IActionResult GetByName(string name)
         {
-            var category = await _context.Categories.Include("Products").AsNoTracking().FirstOrDefaultAsync(e => e.Name.Equals(name));
+            var category = _context.Categories.Include("Products").AsNoTracking().FirstOrDefault(e => e.Name.Equals(name));
             if (category == null)
             {
                 return NotFound();
@@ -87,7 +86,7 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
         }
         //https://localhost:7031/api/Categories    POST   JSON  Request Body {Name , description}
         [HttpPost]
-        public async Task<IActionResult> Post(CategoryCreateDto newCategory)
+        public IActionResult Post(CategoryCreateDto newCategory)
         {
             //Validation  ModelState  Key , Value     True | False
             if (ModelState.IsValid)
@@ -97,8 +96,8 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
                     Name = newCategory.Name,
                     Description = newCategory.Description
                 };
-                await _context.Categories.AddAsync(category);
-                await _context.SaveChangesAsync();
+                _context.Categories.Add(category);
+                _context.SaveChanges();
                 // return Created();   //201
                 //Location
                 return CreatedAtAction("GetById", new { id = category.Id }, category);
@@ -107,7 +106,7 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
         }
         //https://localhost:7031/api/Categories/7  [FromRoute]  Put   JSON Request Body {id ,Name , description}[FromBody]
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put([FromRoute] int id, [FromBody] CategoryCreateDto newCategory)
+        public IActionResult Put([FromRoute] int id, [FromBody] CategoryCreateDto newCategory)
         {
             if (id != newCategory.Id)
             {
@@ -120,10 +119,10 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
             try
             {
                 //_context.Entry(newCategory).State = EntityState.Modified;
-                var category = await _context.Categories.FirstOrDefaultAsync(e => e.Id == id);
+                var category = _context.Categories.FirstOrDefault(e => e.Id == id);
                 category.Name = newCategory.Name;
                 category.Description = newCategory.Description;
-                await _context.SaveChangesAsync();
+                _context.SaveChanges();
                 return Ok(newCategory);
             }
             catch (DbUpdateConcurrencyException ex)
@@ -132,15 +131,15 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
             }
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromRoute] int id)
+        public IActionResult Delete([FromRoute] int id)
         {
-            var employee = await _context.Categories.FirstOrDefaultAsync(e => e.Id == id);
+            var employee = _context.Categories.FirstOrDefault(e => e.Id == id);
             if (employee == null)
             {
                 return NotFound();
             }
             _context.Categories.Remove(employee);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
             return NoContent();
         }
         private bool CategoryExists(int id)
