@@ -1,4 +1,7 @@
 
+using ASP.NetWebAPIDay3Demo.Services.Implements;
+using ASP.NetWebAPIDay3Demo.Services.Interfaces;
+using ASP.NetWebAPIDay3Demo.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASP.NetWebAPIDay3Demo
@@ -16,6 +19,12 @@ namespace ASP.NetWebAPIDay3Demo
             //{
             //    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
             //});
+            builder.Services.AddDbContext<Data.AppDbContext>(
+              option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
+             ));
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+
 
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
@@ -23,9 +32,7 @@ namespace ASP.NetWebAPIDay3Demo
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             //Add DbContext
-            builder.Services.AddDbContext<Data.AppDbContext>(
-                option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
-            ));
+
 
             var app = builder.Build();
 
