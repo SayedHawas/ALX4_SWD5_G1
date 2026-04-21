@@ -4,14 +4,14 @@ namespace ASP.NetWebAPIDay3Demo.Repositories.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsync(int id);
-        Task AddAsync(T entity);
-        Task UpdateAsync(T entity);
-        Task DeleteAsync(int id);
-        Task<int> RowCountAsync();
-        Task<IEnumerable<T>> SearchAsync(Expression<Func<T, bool>> predicate);
-        Task<IEnumerable<T>> GetWithIncludingAsync(params string[] includeProperties);
+        IEnumerable<T> GetAll();
+        T GetById(int id);
+        void Add(T entity);
+        void Update(T entity);
+        void Delete(int id);
+        int RowCount();
+        IEnumerable<T> Search(Expression<Func<T, bool>> predicate);
+        IEnumerable<T> GetWithIncluding(params string[] includeProperties);
 
 
     }

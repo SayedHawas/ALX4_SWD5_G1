@@ -18,53 +18,53 @@ namespace ASP.NetWebAPIDay3Demo.Repositories.Impelements
         /// </summary>
         /// <param name="entity"> </param>
         /// <returns></returns>
-        public async Task AddAsync(T entity)
+        public void Add(T entity)
         {
-            await _dbSet.AddAsync(entity);
+            _dbSet.AddAsync(entity);
             // await _context.SaveChangesAsync();
         }
-        public async Task DeleteAsync(int id)
+        public void Delete(int id)
         {
-            var entity = await _dbSet.FindAsync(id);
+            var entity = _dbSet.Find(id);
             if (entity != null)
             {
                 _dbSet.Remove(entity);
                 //await _context.SaveChangesAsync();
             }
         }
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public IEnumerable<T> GetAll()
         {
-            return await _dbSet.AsNoTracking().ToListAsync();
+            return _dbSet.AsNoTracking().ToList();
         }
 
-        public async Task<T?> GetByIdAsync(int id)
+        public T? GetById(int id)
         {
             //CategoryId ,ProductId
             //return await _dbSet.FindAsync(id);
 
             var KeyName = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties.Select(x => x.Name).Single();
-            return await _dbSet.AsNoTracking().FirstOrDefaultAsync(e => EF.Property<int>(e, KeyName) == id);
+            return _dbSet.AsNoTracking().FirstOrDefault(e => EF.Property<int>(e, KeyName) == id);
         }
-        public async Task<IEnumerable<T>> GetWithIncludingAsync(params string[] includeProperties) //"Category","Products"
+        public IEnumerable<T> GetWithIncluding(params string[] includeProperties) //"Category","Products"
         {
             IQueryable<T> query = _dbSet.AsNoTracking(); //.Include("Category").Include("Products");
             foreach (var include in includeProperties)
             {
                 query = query.Include(include);
             }
-            return await query.ToListAsync();
+            return query.ToList();
         }
-        public async Task<int> RowCountAsync()
+        public int RowCount()
         {
-            return await _dbSet.CountAsync();
+            return _dbSet.Count();
         }
         //Product => p => p.Price > 100
         //SearchAsync(p => p.Price > 100 && p.Name.StartWith('a'))
-        public async Task<IEnumerable<T>> SearchAsync(Expression<Func<T, bool>> predicate)
+        public IEnumerable<T> Search(Expression<Func<T, bool>> predicate)
         {
-            return await _dbSet.Where(predicate).AsNoTracking().ToListAsync();
+            return _dbSet.Where(predicate).AsNoTracking().ToList();
         }
-        public async Task UpdateAsync(T entity)
+        public void Update(T entity)
         {
             _context.Entry(entity).State = EntityState.Modified;
             //_context.SaveChangesAsync();

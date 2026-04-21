@@ -4,8 +4,8 @@
     {
         IEnumerable<Category> GetCategory();
         Category GetCategoryByID(int id);
-        void AddCategory(Category entity);
-        void UpdateCategory(int id, Category entity);
+        void AddCategory(CategoryCreateDto entity);
+        void UpdateCategory(int id, CategoryCreateDto entity);
         void DeleteCategory(int id);
         int GetCategoryCounter();
     }
