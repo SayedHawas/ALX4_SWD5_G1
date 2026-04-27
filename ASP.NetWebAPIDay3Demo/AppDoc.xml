@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASP.NetWebAPIDay3Demo</name>
+    </assembly>
+    <members>
+        <member name="M:ASP.NetWebAPIDay3Demo.Controllers.AsyncCategoriesController.GetCategories">
+            <summary>
+             This Method  To Get List Of Categories 
+            </summary>
+            <returns>IEnumerable Of CategoryGetDto</returns>
+        </member>
+        <member name="T:ASP.NetWebAPIDay3Demo.Migrations.IntitalMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP.NetWebAPIDay3Demo.Migrations.IntitalMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP.NetWebAPIDay3Demo.Migrations.IntitalMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP.NetWebAPIDay3Demo.Migrations.IntitalMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ASP.NetWebAPIDay3Demo.Migrations.AddProducts">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP.NetWebAPIDay3Demo.Migrations.AddProducts.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP.NetWebAPIDay3Demo.Migrations.AddProducts.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP.NetWebAPIDay3Demo.Migrations.AddProducts.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ASP.NetWebAPIDay3Demo.Migrations.EditProducts">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP.NetWebAPIDay3Demo.Migrations.EditProducts.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP.NetWebAPIDay3Demo.Migrations.EditProducts.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP.NetWebAPIDay3Demo.Migrations.EditProducts.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP.NetWebAPIDay3Demo.Repositories.Impelements.Repository`1.Add(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"> </param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

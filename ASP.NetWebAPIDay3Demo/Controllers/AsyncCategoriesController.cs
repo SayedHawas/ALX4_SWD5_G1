@@ -17,7 +17,15 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
         }
         //CRUD
         // GET: api/AsyncCategories
+        /// <summary>
+        ///  This Method  To Get List Of Categories 
+        /// </summary>
+        /// <returns>IEnumerable Of CategoryGetDto</returns>
         [HttpGet]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        [ProducesResponseType<List<CategoryGetDto>>(200)]
+        [ProducesResponseType<List<CategoryGetDto>>(400, Type = typeof(void))]
         public async Task<ActionResult<IEnumerable<CategoryGetDto>>> GetCategories()
         {
             var result = await _context.Categories.Include("Products").AsNoTracking().ToListAsync();
@@ -115,6 +123,7 @@ namespace ASP.NetWebAPIDay3Demo.Controllers
                 };
                 _context.Categories.Add(category);
                 await _context.SaveChangesAsync();
+                //return Created();
                 return CreatedAtAction("GetCategory", new { id = category.Id }, category);
             }
             else
