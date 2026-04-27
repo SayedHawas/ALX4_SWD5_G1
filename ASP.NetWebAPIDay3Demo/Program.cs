@@ -3,6 +3,7 @@ using ASP.NetWebAPIDay3Demo.Services.Implements;
 using ASP.NetWebAPIDay3Demo.Services.Interfaces;
 using ASP.NetWebAPIDay3Demo.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace ASP.NetWebAPIDay3Demo
 {
@@ -30,7 +31,26 @@ namespace ASP.NetWebAPIDay3Demo
             builder.Services.AddOpenApi();
             //Add Services EndPoint + Gen into Swagger
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(doc =>
+            {
+                var filpath = Path.Combine(System.AppContext.BaseDirectory, "AppDoc.xml");
+                doc.IncludeXmlComments(filpath);
+
+                doc.SwaggerDoc("v1",
+                   new OpenApiInfo
+                   {
+                       Title = "Smart API For DEPI",
+                       Version = "v1",
+                       Description = " ASP .NET Core WebAPI Course ",
+                       TermsOfService = new Uri("http://tempuri.org/terms"),
+                       Contact = new OpenApiContact
+                       {
+                           Name = "Sayed Hawas",
+                           Email = "sout_2000@hotmail.com",
+                       },
+                   });
+
+            });
             //Add DbContext
 
 
@@ -51,6 +71,7 @@ namespace ASP.NetWebAPIDay3Demo
 
             app.MapControllers();
 
+            app.UseStaticFiles();
             app.Run();
         }
     }
