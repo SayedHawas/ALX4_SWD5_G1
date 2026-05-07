@@ -1,0 +1,35 @@
+﻿@{
+    //int x = 0;
+}
+<h1> Controller Name is Test </h1>
+
+<p> Pass Data From Controller to View using ViewData </p>
+<p> ID:  @ViewData["id"]  </p>
+<p> Code:  @ViewData["code"]  </p>
+<p> Name:  @ViewData["name"]  </p>
+
+
+<h3> @((int)ViewData["id"] + (int)ViewData["code"]) </h3>
+
+@* Comment *@
+
+<p> Pass Data From Controller to View using ViewBag </p>
+<p> ID:  @ViewBag.id2  </p>
+<p> Code:  @ViewBag.code2  </p>
+<p> Name:  @ViewBag.name2  </p>
+
+<h3> @(ViewBag.id2 + ViewBag.code2) </h3>
+
+@* <h2>//Razor Eng </h2>
+@for (int x=0; x < 10; x++)
+{  
+    //comment
+   <h1> @x</h1>
+}
+
+@{
+    var y = 200;
+    y = 500;
+
+ *@}
+@* @(x + y) *@

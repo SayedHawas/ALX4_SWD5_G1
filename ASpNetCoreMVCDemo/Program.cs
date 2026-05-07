@@ -10,6 +10,11 @@ namespace ASpNetCoreMVCDemo
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            // Add DbContext with SQL Server provider
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+            );
+
             var app = builder.Build();
 
             //Middleware pipeline configuration

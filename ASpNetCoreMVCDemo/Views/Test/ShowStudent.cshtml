@@ -1,0 +1,89 @@
+﻿@model List<ASpNetCoreMVCDemo.Models.Student>
+
+<h1> Welcome to Students Page </h1>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th> ID </th>
+        <th> Name </th>
+        <th> Age </th>
+    </tr>
+    @* @foreach (var student in (List<ASpNetCoreMVCDemo.Models.Student>) Model) *@
+    @* @foreach (var student in Model as List<ASpNetCoreMVCDemo.Models.Student>) *@
+     @foreach (var student in Model) 
+    {
+        <tr>
+            <td>@student.Id</td>
+            <td>@student.Name</td>
+            <td>@student.Age</td>
+        </tr>
+    }
+</table>
+
+<pre>
+--=======================================================
+                   View in MVC
+--=======================================================
+
+------- C# With Razor eng Introduction --------
+
+ASP.NET Web Pages with Razor syntax provides a simple programming syntax
+for writing code in Web pages where the server-based code is embedded into the Web page HTML markup
+
+The Razor code runs on the server before the page is sent to the browser.
+This server code can dynamically create client content—that is, it can generate HTML markup or 
+other content on the fly and
+then send it to the browser along with any static HTML that the page contains.
+
+Web pages that contain Razor content have a special file extension
+(.cshtml or .vbhtml). The server recognizes these extensions, runs the code that's marked with Razor syntax,
+and then sends the resulting page to the browser.
+</pre>
+@if (5>3) { <p> True</p> }
+<h4>Email sayed@gamile.com</h4>
+
+@{
+    <h4>Email sayed@@gamile.com</h4>
+}
+<p>
+    <pre>
+-Start the Code With   @@
+-Must end With ; With Block @@{ Code ;}
+
+- Comment:-
+-----------  
+
+          @* Comment *@
+  </pre>
+</p>
+@* in the first Page View :-
+-------------------------
+@{
+  Layout = null;
+  
+}
+
+in the Page :-
+--------------- *@
+@{var weekDay = DateTime.Now.DayOfWeek;}
+<p>Today is: @weekDay</p>
+
+@* Add Block :-
+------------ *@
+@for(var i = 10; i < 16; i++)
+{
+    <p style="font-size: @(i + "pt")">My font size is now: @i</p>
+}
+
+@* Foreach :- *@
+
+<ul>
+    @{
+        List<int> Numbers = new List<int>() { 1, 25, 44, 887, 78, 55 };
+    }
+    @foreach (var myItem in Numbers)
+{
+    <li>@myItem</li>
+}
+</ul>
