@@ -1,3 +1,6 @@
+using ASpNetCoreMVCDemo.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace ASpNetCoreMVCDemo
 {
     public class Program
@@ -10,10 +13,10 @@ namespace ASpNetCoreMVCDemo
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            // Add DbContext with SQL Server provider
             builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-            );
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
 
             var app = builder.Build();
 
@@ -36,7 +39,7 @@ namespace ASpNetCoreMVCDemo
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}")
+                pattern: "{controller=WebSite}/{action=Index}/{id?}")
                 .WithStaticAssets();
 
             app.Run();

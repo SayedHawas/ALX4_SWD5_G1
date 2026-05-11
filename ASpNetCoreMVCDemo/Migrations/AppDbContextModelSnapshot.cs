@@ -21,79 +21,89 @@ namespace ASpNetCoreMVCDemo.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ASpNetCoreMVCDemo.Models.Category", b =>
+
+            modelBuilder.Entity("ASpNetCoreMVCDemo.Models.Department", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("DepartmentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"));
+
 
                     b.Property<string>("Description")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+
+
+
+                    b.HasKey("DepartmentId");
+
+                    b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("ASpNetCoreMVCDemo.Models.Employee", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"));
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Job")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("CategoryId");
-
-                    b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("ASpNetCoreMVCDemo.Models.Product", b =>
-                {
-                    b.Property<int>("ProductId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("ImagePath")
+                    b.Property<string>("PhotoPath")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<decimal>("Price")
+                    b.Property<decimal>("Salary")
                         .HasColumnType("decimal(9,2)");
 
-                    b.Property<int>("Stock")
-                        .HasColumnType("int");
+                    b.HasKey("EmployeeId");
 
-                    b.HasKey("ProductId");
+                    b.HasIndex("DepartmentId");
 
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Products");
+                    b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("ASpNetCoreMVCDemo.Models.Product", b =>
+            modelBuilder.Entity("ASpNetCoreMVCDemo.Models.Employee", b =>
                 {
-                    b.HasOne("ASpNetCoreMVCDemo.Models.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId")
+                    b.HasOne("ASpNetCoreMVCDemo.Models.Department", "Department")
+                        .WithMany("Employees")
+                        .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("Department");
                 });
 
-            modelBuilder.Entity("ASpNetCoreMVCDemo.Models.Category", b =>
+            modelBuilder.Entity("ASpNetCoreMVCDemo.Models.Department", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("Employees");
+
                 });
 #pragma warning restore 612, 618
         }
