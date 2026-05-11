@@ -1,5 +1,7 @@
+
 ﻿using ASpNetCoreMVCDemo.Models;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace ASpNetCoreMVCDemo.Data
 {
@@ -17,5 +19,6 @@ namespace ASpNetCoreMVCDemo.Data
         //
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
+
     }
 }

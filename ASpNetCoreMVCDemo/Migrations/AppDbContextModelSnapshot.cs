@@ -21,6 +21,7 @@ namespace ASpNetCoreMVCDemo.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+
             modelBuilder.Entity("ASpNetCoreMVCDemo.Models.Department", b =>
                 {
                     b.Property<int>("DepartmentId")
@@ -29,17 +30,17 @@ namespace ASpNetCoreMVCDemo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"));
 
+
                     b.Property<string>("Description")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+
+
 
                     b.HasKey("DepartmentId");
 
@@ -102,6 +103,7 @@ namespace ASpNetCoreMVCDemo.Migrations
             modelBuilder.Entity("ASpNetCoreMVCDemo.Models.Department", b =>
                 {
                     b.Navigation("Employees");
+
                 });
 #pragma warning restore 612, 618
         }

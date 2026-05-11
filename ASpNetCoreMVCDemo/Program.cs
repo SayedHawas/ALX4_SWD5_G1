@@ -17,6 +17,7 @@ namespace ASpNetCoreMVCDemo
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+
             var app = builder.Build();
 
             //Middleware pipeline configuration
